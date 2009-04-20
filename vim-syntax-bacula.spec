@@ -3,7 +3,7 @@ Summary:	Vim syntax: %{syntax}
 Name:		vim-syntax-%{syntax}
 Version:	1.0
 Release:	1
-License:	Charityware
+License:	Extended GPL v2
 Group:		Applications/Editors/Vim
 Source0:	http://bacula.svn.sourceforge.net/viewvc/bacula/trunk/bacula/scripts/bacula.vim
 # Source0-md5:	03b47503e1e5465c037f361593395109
