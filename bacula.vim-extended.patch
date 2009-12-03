@@ -26,7 +26,7 @@
  
  " Director {
  syn region   BacDir     display start="Director {" end="}" contains=BacName,BacComment,BacString,BacDir,BacDir1,BacDir2
-@@ -65,8 +66,8 @@
+@@ -65,9 +66,10 @@
  syn region   BacJobDefs display start="JobDefs {" end="^}" contains=BacJ1,BacJ2,BacString,BacComment,Level,BacC2,BacJ3
  syn region   Level      display start="Level =" end="$"    contains=LevelElt
  
@@ -35,9 +35,11 @@
 +syn keyword  BacJ1      contained Schedule Name Priority Client Pool JobDefs FileSet SpoolData Storage where Enabled
 +syn keyword  BacJ2      contained RunBeforeJob RunAfterJob Type Messages ClientRunAfterJob Run After Job Verify Job Accurate
  syn match    BacJ3      contained /Write Bootstrap/
++syn match    BacJ3      contained /\(Full\|Incremental\|Differential\)\s*Backup\s*Pool/
  
  
-@@ -92,7 +93,9 @@
+ " RunScript {
+@@ -92,7 +94,9 @@
  syn region   BacPool      display start="Pool {" end="^}"     contains=BacP1,BacP2,BacP3,BacString,BacComment
  syn match    BacP1        contained /Pool\s*Type/
  syn match    BacP2        contained /Volume\s*Retention/
