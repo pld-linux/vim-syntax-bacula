@@ -1,5 +1,5 @@
---- bacula.vim	2009-12-03 10:50:38.395331927 +0100
-+++ /home/users/paszczus/bacula.vim	2009-12-03 11:00:38.410999786 +0100
+--- ./bacula.vim	2009-12-03 13:33:15.261815962 +0200
++++ ./bacula.vim	2009-12-03 13:33:15.261815962 +0200
 @@ -23,7 +23,7 @@
  syntax keyword BacName Name
  syn case ignore
@@ -18,7 +18,15 @@
  syn match     BacFSOpt2  contained /ignore case/
  syn keyword   BacFS1     contained File
  syn match     BacFS2     contained /Enable VSS/
-@@ -65,8 +65,8 @@
+@@ -50,6 +50,7 @@
+ syn region   BacSto     display start="Storage {" end="}" contains=BacName,BacComment,BacString,BacSto1,BacSto2
+ syn keyword  BacSto1	contained Address SDPort Password Device Autochanger
+ syn match    BacSto2    contained /Media\s*Type/
++syn match    BacSto2    contained /Maximum\s*Concurrent\s*Jobs/
+ 
+ " Director {
+ syn region   BacDir     display start="Director {" end="}" contains=BacName,BacComment,BacString,BacDir,BacDir1,BacDir2
+@@ -65,8 +66,8 @@
  syn region   BacJobDefs display start="JobDefs {" end="^}" contains=BacJ1,BacJ2,BacString,BacComment,Level,BacC2,BacJ3
  syn region   Level      display start="Level =" end="$"    contains=LevelElt
  
@@ -29,3 +37,14 @@
  syn match    BacJ3      contained /Write Bootstrap/
  
  
+@@ -92,7 +93,9 @@
+ syn region   BacPool      display start="Pool {" end="^}"     contains=BacP1,BacP2,BacP3,BacString,BacComment
+ syn match    BacP1        contained /Pool\s*Type/
+ syn match    BacP2        contained /Volume\s*Retention/
+-syn keyword  BacP3        contained Name AutoPrune Recycle
++syn match    BacP2        contained /Maximum\s*Volume\s*Jobs/
++syn match    BacP2        contained /Maximum\s*Volumes/
++syn keyword  BacP3        contained Name AutoPrune Recycle LabelFormat Enabled
+ 
+ syn case match
+ if version >= 508 || !exists("did_screen_syn_inits")
