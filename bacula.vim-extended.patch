@@ -1,0 +1,31 @@
+--- bacula.vim	2009-12-03 10:50:38.395331927 +0100
++++ /home/users/paszczus/bacula.vim	2009-12-03 11:00:38.410999786 +0100
+@@ -23,7 +23,7 @@
+ syntax keyword BacName Name
+ syn case ignore
+ 
+-syn keyword  LevelElt  contained Full Incremental Differential
++syn keyword  LevelElt  contained Full Incremental Differential InitCatalog Catalog VolumeToCatalog DiskToCatalog
+ 
+ " todo
+ syn keyword     BacTodo       contained TODO FIXME XXX NOTE
+@@ -41,7 +41,7 @@
+ syn region    BacFSInc   contained display start="Include {" end="}" contains=BacString,BacComment,BacFSOpt,BacFS1
+ syn region    BacFSExc   contained display start="Exclude {" end="}" contains=BacString,BacComment,BacFSOpt,BacFS1
+ syn region    BacFSOpt   contained display  start="Options {" end="}" contains=BacString,BacComment,BacFSOpt1,BacFSOpt2
+-syn keyword   BacFSOpt1  contained verify signature onefs noatime RegexFile Exclude Wild WildDir WildFile CheckChanges aclsupport
++syn keyword   BacFSOpt1  contained verify signature checkfilechanges onefs noatime RegexFile Exclude Wild WildDir WildFile CheckChanges aclsupport
+ syn match     BacFSOpt2  contained /ignore case/
+ syn keyword   BacFS1     contained File
+ syn match     BacFS2     contained /Enable VSS/
+@@ -65,8 +65,8 @@
+ syn region   BacJobDefs display start="JobDefs {" end="^}" contains=BacJ1,BacJ2,BacString,BacComment,Level,BacC2,BacJ3
+ syn region   Level      display start="Level =" end="$"    contains=LevelElt
+ 
+-syn keyword  BacJ1      contained Schedule Name Priority Client Pool JobDefs FileSet SpoolData Storage where
+-syn keyword  BacJ2      contained RunBeforeJob RunAfterJob Type Messages ClientRunAfterJob
++syn keyword  BacJ1      contained Schedule Name Priority Client Pool JobDefs FileSet SpoolData Storage where Enabled
++syn keyword  BacJ2      contained RunBeforeJob RunAfterJob Type Messages ClientRunAfterJob Run After Job Verify Job Accurate
+ syn match    BacJ3      contained /Write Bootstrap/
+ 
+ 
