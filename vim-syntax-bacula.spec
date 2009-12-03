@@ -2,13 +2,14 @@
 Summary:	Vim syntax: %{syntax}
 Name:		vim-syntax-%{syntax}
 Version:	1.0
-Release:	1
+Release:	2
 License:	Extended GPL v2
 Group:		Applications/Editors/Vim
 Source0:	http://bacula.svn.sourceforge.net/viewvc/bacula/trunk/bacula-old/scripts/bacula.vim
 # Source0-md5:	ea685e214581f5f8edadbf418b32f79e
 Source1:	http://bacula.svn.sourceforge.net/viewvc/bacula/trunk/bacula-old/scripts/filetype.vim
 # Source1-md5:	f36ef7e68216ddc28a24554ddfd54598
+Patch0:     bacula.vim-extended.patch
 # for _vimdatadir existence
 Requires:	vim-rt >= 4:6.3.058-3
 BuildArch:	noarch
@@ -22,6 +23,7 @@ This plugin provides syntax highlighting for bacula config files.
 %prep
 %setup -qcT
 cp -a %{SOURCE0} .
+%patch0 -p0 
 
 %install
 rm -rf $RPM_BUILD_ROOT
