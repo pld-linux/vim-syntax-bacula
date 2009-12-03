@@ -9,16 +9,17 @@
  
  " todo
  syn keyword     BacTodo       contained TODO FIXME XXX NOTE
-@@ -41,7 +41,7 @@
+@@ -41,7 +41,8 @@
  syn region    BacFSInc   contained display start="Include {" end="}" contains=BacString,BacComment,BacFSOpt,BacFS1
  syn region    BacFSExc   contained display start="Exclude {" end="}" contains=BacString,BacComment,BacFSOpt,BacFS1
  syn region    BacFSOpt   contained display  start="Options {" end="}" contains=BacString,BacComment,BacFSOpt1,BacFSOpt2
 -syn keyword   BacFSOpt1  contained verify signature onefs noatime RegexFile Exclude Wild WildDir WildFile CheckChanges aclsupport
 +syn keyword   BacFSOpt1  contained verify signature checkfilechanges onefs noatime RegexFile Exclude Wild WildDir WildFile CheckChanges aclsupport
++syn keyword   BacFSOpt1  contained sparse hardlinks fstype compression
  syn match     BacFSOpt2  contained /ignore case/
  syn keyword   BacFS1     contained File
  syn match     BacFS2     contained /Enable VSS/
-@@ -50,6 +50,7 @@
+@@ -50,6 +51,7 @@
  syn region   BacSto     display start="Storage {" end="}" contains=BacName,BacComment,BacString,BacSto1,BacSto2
  syn keyword  BacSto1	contained Address SDPort Password Device Autochanger
  syn match    BacSto2    contained /Media\s*Type/
@@ -26,7 +27,7 @@
  
  " Director {
  syn region   BacDir     display start="Director {" end="}" contains=BacName,BacComment,BacString,BacDir,BacDir1,BacDir2
-@@ -65,9 +66,10 @@
+@@ -65,9 +67,10 @@
  syn region   BacJobDefs display start="JobDefs {" end="^}" contains=BacJ1,BacJ2,BacString,BacComment,Level,BacC2,BacJ3
  syn region   Level      display start="Level =" end="$"    contains=LevelElt
  
@@ -39,7 +40,7 @@
  
  
  " RunScript {
-@@ -92,7 +94,9 @@
+@@ -92,7 +95,9 @@
  syn region   BacPool      display start="Pool {" end="^}"     contains=BacP1,BacP2,BacP3,BacString,BacComment
  syn match    BacP1        contained /Pool\s*Type/
  syn match    BacP2        contained /Volume\s*Retention/
