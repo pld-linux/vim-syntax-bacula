@@ -9,7 +9,7 @@ Source0:	http://bacula.git.sourceforge.net/git/gitweb.cgi?p=bacula/bacula;a=blob
 # Source0-md5:	ea685e214581f5f8edadbf418b32f79e
 Source1:	http://bacula.git.sourceforge.net/git/gitweb.cgi?p=bacula/bacula;a=blob_plain;f=bacula/scripts/filetype.vim
 # Source1-md5:	f36ef7e68216ddc28a24554ddfd54598
-Patch0:     bacula.vim-extended.patch
+Patch0:		bacula.vim-extended.patch
 # for _vimdatadir existence
 Requires:	vim-rt >= 4:6.3.058-3
 BuildArch:	noarch
