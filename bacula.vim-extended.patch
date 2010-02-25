@@ -51,3 +51,12 @@
  
  syn case match
  if version >= 508 || !exists("did_screen_syn_inits")
+--- vim-syntax-bacula/filetype.vim~	2009-04-20 13:05:26.000000000 +0300
++++ vim-syntax-bacula/filetype.vim	2010-02-25 11:27:13.701942142 +0200
+@@ -3,5 +3,5 @@
+       finish
+ endif
+ augroup filetypedetect
+-      au! BufRead,BufNewFile bacula-dir.conf	setfiletype bacula
++      au! BufRead,BufNewFile bacula-dir.conf,/etc/bacula/*.inc 	set ft=bacula
+ augroup END

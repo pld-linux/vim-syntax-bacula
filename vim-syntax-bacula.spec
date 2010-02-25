@@ -23,13 +23,14 @@ This plugin provides syntax highlighting for bacula config files.
 %prep
 %setup -qcT
 cp -a %{SOURCE0} .
-%patch0 -p0 
+cp -a %{SOURCE1} .
+%patch0 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_vimdatadir}/{syntax,ftdetect}
 cp -a %{syntax}.vim $RPM_BUILD_ROOT%{_vimdatadir}/syntax/%{syntax}.vim
-cp -a %{SOURCE1} $RPM_BUILD_ROOT%{_vimdatadir}/ftdetect/%{syntax}.vim
+cp -a filetype.vim $RPM_BUILD_ROOT%{_vimdatadir}/ftdetect/%{syntax}.vim
 
 %clean
 rm -rf $RPM_BUILD_ROOT
