@@ -5,9 +5,9 @@ Version:	1.0
 Release:	2
 License:	Extended GPL v2
 Group:		Applications/Editors/Vim
-Source0:	http://bacula.svn.sourceforge.net/viewvc/bacula/trunk/bacula-old/scripts/bacula.vim
+Source0:	http://bacula.git.sourceforge.net/git/gitweb.cgi?p=bacula/bacula;a=blob_plain;f=bacula/scripts/bacula.vim
 # Source0-md5:	ea685e214581f5f8edadbf418b32f79e
-Source1:	http://bacula.svn.sourceforge.net/viewvc/bacula/trunk/bacula-old/scripts/filetype.vim
+Source1:	http://bacula.git.sourceforge.net/git/gitweb.cgi?p=bacula/bacula;a=blob_plain;f=bacula/scripts/filetype.vim
 # Source1-md5:	f36ef7e68216ddc28a24554ddfd54598
 Patch0:     bacula.vim-extended.patch
 # for _vimdatadir existence
